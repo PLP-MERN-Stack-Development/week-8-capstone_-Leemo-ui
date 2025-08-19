@@ -22,7 +22,11 @@ const io = new SocketIOServer(httpServer, {
 });
 
 app.use(express.json());
-app.use(cors());
+// Allow frontend origin for CORS
+app.use(cors({
+  origin: "http://localhost:5173",
+  credentials: true
+}));
 app.use(morgan("dev")); // Logging middleware
 app.use(helmet()); // Security middleware
 
@@ -44,7 +48,9 @@ app.post(
     // Validation middleware
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      return res.status(400).json({ error: errors.array() });
+      // Return first error message for clarity
+      const firstError = errors.array()[0];
+      return res.status(400).json({ error: firstError.msg });
     }
     try {
       const { name, email, password, role } = req.body;
