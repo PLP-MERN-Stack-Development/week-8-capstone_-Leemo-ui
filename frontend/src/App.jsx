@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link, useNavigate, useParams } from "react-router-dom";
 import io from "socket.io-client";
-import { useLocalStorage } from "./useLocalStorage";
 
 const API_URL = "http://localhost:5000/api";
 const socket = io("http://localhost:5000");
@@ -124,7 +123,6 @@ function Login({ setUser }) {
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Login failed");
       setUser(data.user);
-      localStorage.setItem("token", data.token);
       navigate("/");
     } catch (err) {
       setError(err.message);
