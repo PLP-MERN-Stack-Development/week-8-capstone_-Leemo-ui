@@ -54,7 +54,7 @@ Your project will be automatically submitted when you push to your GitHub Classr
 ## Deployment
 
 - **Frontend:** Deployed at: [YOUR_FRONTEND_URL_HERE]
-- **Backend:** Deployed at: [YOUR_BACKEND_URL_HERE]
+- **Backend:** Deployed at: [(https://week-8-capstone-leemo-ui.onrender.com)]
 
 ### CI/CD
 
