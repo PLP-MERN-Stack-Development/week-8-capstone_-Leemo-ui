@@ -54,13 +54,13 @@ function CourseList() {
   }, []);
   return (
     <div>
-      <h2 className="fancy-title">🚀 Explore Our Courses! 🚀</h2>
+      <h2 className="fancy-title">Explore Our Courses! </h2>
       <div className="course-list">
         {courses.map(c => (
           <div className="card fancy-card" key={c._id}>
             <h3>{c.title} 🎓</h3>
             <p>{c.description}</p>
-            <p><b>Instructor:</b> {c.instructor?.name || "N/A"} 👨‍🏫</p>
+            <p><b>Instructor:</b> {c.instructor?.name || "catherine"} 👨‍🏫</p>
             <Link className="fancy-btn" to={`/courses/${c._id}`}>✨ View ✨</Link>
           </div>
         ))}
@@ -85,7 +85,7 @@ function CourseDetail({ courseId }) {
     <div className="card fancy-card">
       <h2>{course.title} 🎉</h2>
       <p>{course.description}</p>
-      <p><b>Instructor:</b> {course.instructor?.name || "N/A"} 👨‍🏫</p>
+      <p><b>Instructor:</b> {course.instructor?.name || "chebet"} 👨‍🏫</p>
     </div>
   );
 }
