@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { BrowserRouter as Router, Routes, Route, Link, useNavigate, useParams } from "react-router-dom";
+import { Routes, Route, Link, useNavigate, useParams } from "react-router-dom";
 import io from "socket.io-client";
 
 const API_URL = "http://localhost:5000/api";
@@ -150,7 +150,7 @@ function Login({ setUser }) {
 function App() {
   const [user, setUser] = useState(null);
   return (
-    <Router>
+    <>
       <nav>
         <Link to="/">Courses</Link> |{" "}
         <Link to="/register">Register</Link> |{" "}
@@ -162,7 +162,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login setUser={setUser} />} />
       </Routes>
-    </Router>
+    </>
   );
 }
 
